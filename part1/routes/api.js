@@ -22,7 +22,7 @@ let db;
     });
 
 
-    // Insert data if table is empty 
+    // Insert data if table is empty for Users
     const [users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (users[0].count === 0) {
         try {
@@ -64,7 +64,7 @@ let db;
 
 
     // Insert data if table is empty
-    const [users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    const [users] = await db.execute('SELECT COUNT(*) AS count FROM WalkReque');
     if (users[0].count === 0) {
         try {
             await db.execute(`
