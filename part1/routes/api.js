@@ -3,18 +3,13 @@ var router = express.Router();
 var mysql = require('mysql2/promise');
 
 
-let db;
-
-// Route to return books as JSON
-router.get('/', async function(req, res, next) {
-  try {
-    const [books] = await db.execute('SELECT * FROM books');
-    res.json(books);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
-  }
+/* GET API listing. */
+router.get('/', function(req, res, next) {
+  res.send('Response from API endpoint');
 });
 
+
+let db;
 
 (async () => {
   try {
@@ -61,5 +56,9 @@ router.get('/', async function(req, res, next) {
   }
 })();
 
+// Route to return books as JSON
+router.get('/', async (req, res) => {
+
+});
 
 module.exports = router;
