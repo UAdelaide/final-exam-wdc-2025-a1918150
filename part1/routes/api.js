@@ -3,6 +3,8 @@ var router = express.Router();
 var mysql = require('mysql2/promise');
 
 
+let db;
+
 /* GET API listing. */
 router.get('/', async function(req, res, next) {
   try {
@@ -13,8 +15,6 @@ router.get('/', async function(req, res, next) {
   }
 });
 
-
-let db;
 
 (async () => {
   try {
