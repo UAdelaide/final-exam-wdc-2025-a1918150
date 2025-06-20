@@ -4,7 +4,30 @@
     <title>Dog Home Page</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
+    <style>
+        body {
+      font-family: Comic Sans MS;
+      background: linear-gradient(to right, red, blue, green, yellow);
+      color: lime;
+      text-align: center;
+      animation: blink 0.5s infinite alternate;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+    button {
+      position: absolute;
+      top: 90vh;
+      left: 90vw;
+    }
+
+    .dog-info {
+      font-size: 28px;
+    }
+    </style>
 </head>
 
 <body>
