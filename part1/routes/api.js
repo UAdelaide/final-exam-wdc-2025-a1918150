@@ -99,6 +99,7 @@ router.get('/dogs', async (req, res) => {
     }
 });
 
+// Route to return walkrequests which are open as JSON
 router.get('/walkrequests/open', async (req, res) => {
     try {
         const [wr] = await db.execute(`SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
@@ -112,6 +113,7 @@ router.get('/walkrequests/open', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch walkrequests which are open' });
     }
 });
+
 
 router.get('/walkers/summary', async (req, res) => {
     try {
