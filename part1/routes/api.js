@@ -43,7 +43,7 @@ let db;
 
 
     // Insert data if table is empty
-    const [users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    const [users] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (users[0].count === 0) {
         try {
             await db.execute(`
