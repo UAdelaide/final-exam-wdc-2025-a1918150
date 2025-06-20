@@ -88,7 +88,11 @@ let db;
 
 // Route to return books as JSON
 router.get('/', async (req, res) => {
+    try {
+        const 
+    } catch (error) {
 
+    }
 });
 
 module.exports = router;
