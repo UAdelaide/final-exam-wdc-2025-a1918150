@@ -101,7 +101,7 @@ router.get('/dogs', async (req, res) => {
 
 router.get('/walkrequests/open', async (req, res) => {
     try {
-        const [wr] = await db.execute(`SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.owner_username
+        const [wr] = await db.execute(`SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
                                         FROM WalkRequests AS wr
                                         JOIN Dogs AS d ON wr.dog_id = d.dog_id
                                         JOIN Users AS u ON d.owner_id = u.user_id
