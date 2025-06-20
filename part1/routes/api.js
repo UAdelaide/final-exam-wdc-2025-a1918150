@@ -86,7 +86,7 @@ let db;
   }
 })();
 
-// Route to return books as JSON
+// Route to return Dogs as JSON
 router.get('/dogs', async (req, res) => {
     try {
         const [dogs] = await db.execute(`SELECT d.name AS dog_name, d.size, u.username AS owner_username
