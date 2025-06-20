@@ -4,7 +4,7 @@ var mysql = require('mysql2/promise');
 
 
 /* GET API listing. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
