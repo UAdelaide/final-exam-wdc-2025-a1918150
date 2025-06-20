@@ -99,7 +99,7 @@ router.get('/dogs', async (req, res) => {
 
 router.get('/walkrequests/open', async (req, res) => {
     try {
-        const [dogs] = await db.execute('SELECT request_id, dog_name, requested_time, duration_minutes, location, owner_username');
+        const [dogs] = await db.execute('SELECT request_id, dog_name, requested_time, duration_minutes, location, owner_username FROM WalkRequests AS wr JOIN ');
         res.json(dogs);
     } catch (error) {
         console.error('Error fetching dogs:', error);
