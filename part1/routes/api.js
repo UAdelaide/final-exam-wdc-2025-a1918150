@@ -118,7 +118,7 @@ router.get('/walkers/summary', async (req, res) => {
         const [ws] = await db.execute(`SELECT walker_username, total_ratings, average_rating, completed_walks
                                         FROM Users AS u
                                         JOIN WalkRatings AS r ON u.user_id = r.walker_id
-                                        JOIN WalkUsers AS u ON d.owner_id = u.user_id
+                                        JOIN WalkRequests AS w ON 
                                         WHERE wr.status = "open"`);
         res.json(ws);
     } catch (error) {
