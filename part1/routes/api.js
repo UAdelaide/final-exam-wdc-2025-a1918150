@@ -28,12 +28,12 @@ let db;
         try {
             await db.execute(`
                 INSERT INTO Users (username, email, password_hash, role)
-VALUES
-("alice123", "alice@example.com", "hashed123", "owner"),
-("bobwalker", "bob@example.com", "hashed456", "walker"),
-("carol123", "carol@example.com", "hashed789", "owner"),
-("davidwalker", "david@example.com", "hashed123", "walker"),
-("emilyowner", "emily@example.com", "hashed456", "owner");
+                    VALUES
+                    ("alice123", "alice@example.com", "hashed123", "owner"),
+                    ("bobwalker", "bob@example.com", "hashed456", "walker"),
+                    ("carol123", "carol@example.com", "hashed789", "owner"),
+                    ("davidwalker", "david@example.com", "hashed123", "walker"),
+                    ("emilyowner", "emily@example.com", "hashed456", "owner");
             `);
         } catch (err) {
           console.error('Error inserting initial data into Users table:', err);
