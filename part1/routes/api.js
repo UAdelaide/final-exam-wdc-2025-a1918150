@@ -89,7 +89,7 @@ let db;
 // Route to return books as JSON
 router.get('/dogs', async (req, res) => {
     try {
-        const [dogs] = await db.execute('SELECT d.name AS dog_name, d.size, u.username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id');
+        const [dogs] = await db.execute(`SELECT d.name AS dog_name, d.size, u.username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id`);
         res.json(dogs);
     } catch (error) {
         console.error('Error fetching dogs:', error);
@@ -104,7 +104,8 @@ router.get('/walkrequests/open', async (req, res) => {
                                         JOIN Dogs AS d
                                         ON wr.dog_id = d.dog_id
                                         JOIN Users AS u
-                                        ON d.owner_id = u.user_id WHERE wr.status = "open"`);
+                                        ON d.owner_id = u.user_id
+                                        WHERE wr.status = "open"`);
         res.json(wr);
     } catch (error) {
         console.error('Error fetching walkrequests which are open:', error);
