@@ -34,14 +34,12 @@ let db;
                     ("carol123", "carol@example.com", "hashed789", "owner"),
                     ("davidwalker", "david@example.com", "hashed123", "walker"),
                     ("emilyowner", "emily@example.com", "hashed456", "owner");
-                `);
-
-
+            `);
         } catch (err) {
           console.error('Error inserting initial data into Users table:', err);
         }
 
-
+    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
