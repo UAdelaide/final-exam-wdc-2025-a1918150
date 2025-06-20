@@ -61,9 +61,5 @@ router.get('/', async function(req, res, next) {
   }
 })();
 
-// Route to return books as JSON
-router.get('/', async (req, res) => {
-
-});
 
 module.exports = router;
