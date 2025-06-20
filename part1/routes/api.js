@@ -63,8 +63,8 @@ let db;
 
 
 
-    // Insert data if table is empty
-    const [users] = await db.execute('SELECT COUNT(*) AS count FROM WalkReque');
+    // Insert data if table is empty for WalkRequests
+    const [WalkRequests] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (users[0].count === 0) {
         try {
             await db.execute(`
