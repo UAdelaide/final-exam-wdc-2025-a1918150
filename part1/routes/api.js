@@ -120,7 +120,7 @@ router.get('/walkers/summary', async (req, res) => {
                                         JOIN Dogs AS d ON wr.dog_id = d.dog_id
                                         JOIN Users AS u ON d.owner_id = u.user_id
                                         WHERE wr.status = "open"`);
-        res.json(wr);
+        res.json(ws);
     } catch (error) {
         console.error('Error fetching summary of each walker with their average rating and number of completed walks:', error);
         res.status(500).json({ error: 'Failed to fetch dogs' });
