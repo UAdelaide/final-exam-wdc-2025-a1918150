@@ -5,7 +5,7 @@ var mysql = require('mysql2/promise');
 
 let db;
 
-/* GET API listing. */
+// Route to return books as JSON
 router.get('/', async function(req, res, next) {
   try {
     const [books] = await db.execute('SELECT * FROM books');
