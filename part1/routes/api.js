@@ -25,9 +25,15 @@ let db;
     // Insert data if table is empty
     const [users] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (users[0].count === 0) {
-        try {}
+        try {
+            
 
-    }
+
+        } catch (err) {
+          console.error('Error inserting initial data into Users table:', err);
+        }
+
+
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
