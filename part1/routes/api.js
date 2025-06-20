@@ -119,7 +119,8 @@ router.get('/walkers/summary', async (req, res) => {
                                         FROM Users AS u
                                         JOIN WalkRatings AS r ON u.user_id = r.walker_id
                                         JOIN WalkRequests AS w ON w.request_id = r.request_id AND w.status = "completed"
-                                        WHERE wr.status = "open"`);
+                                        WHERE u.role = "walker"
+                                        GROUP BY u.user_id`);
         res.json(ws);
     } catch (error) {
         console.error('Error fetching summary of each walker with their average rating and number of completed walks:', error);
