@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require('mysql2/promise');
+
 
 /* GET API listing. */
 router.get('/', function(req, res, next) {
@@ -55,7 +57,7 @@ let db;
 })();
 
 // Route to return books as JSON
-app.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
