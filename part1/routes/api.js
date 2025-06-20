@@ -122,7 +122,7 @@ router.get('/walkers/summary', async (req, res) => {
                                         WHERE wr.status = "open"`);
         res.json(wr);
     } catch (error) {
-        console.error('Error fetching walkrequests which are open:', error);
+        console.error('Error fetching summary of each walker with their average rating and number of completed walks:', error);
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
