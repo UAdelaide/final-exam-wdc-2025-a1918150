@@ -77,7 +77,7 @@ let db;
                     ("emilyowner", "emily@example.com", "hashed456", "owner");
             `);
         } catch (err) {
-          console.error('Error inserting initial data into Users table:', err);
+          console.error('Error inserting initial data into WalkRequests table:', err);
         }
 
     }
