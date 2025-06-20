@@ -43,8 +43,8 @@ let db;
 
 
     // Insert data if table is empty
-    const [users] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-    if (users[0].count === 0) {
+    const [dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (dogs[0].count === 0) {
         try {
             await db.execute(`
                 Insert into Users (username, email, password_hash, role)
@@ -56,7 +56,7 @@ let db;
                     ("emilyowner", "emily@example.com", "hashed456", "owner");
             `);
         } catch (err) {
-          console.error('Error inserting initial data into Users table:', err);
+          console.error('Error inserting initial data into dogs table:', err);
         }
 
     }
