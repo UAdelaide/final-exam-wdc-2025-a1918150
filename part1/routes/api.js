@@ -89,9 +89,11 @@ let db;
 // Route to return books as JSON
 router.get('/dogs', async (req, res) => {
     try {
-        const 
+        const [dogs] = await db.execute('SELECT * FROM Dogs');
+        res.json(dogs);
     } catch (error) {
-
+        console.error('Error fetching dogs:', error);
+        res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
 
