@@ -68,13 +68,13 @@ let db;
     if (walkRequests[0].count === 0) {
         try {
             await db.execute(`
-                Insert into Users (username, email, password_hash, role)
-                    Values
-                    ("alice123", "alice@example.com", "hashed123", "owner"),
-                    ("bobwalker", "bob@example.com", "hashed456", "walker"),
-                    ("carol123", "carol@example.com", "hashed789", "owner"),
-                    ("davidwalker", "david@example.com", "hashed123", "walker"),
-                    ("emilyowner", "emily@example.com", "hashed456", "owner");
+                INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+                    VALUES
+                    ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
+                    ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted"),
+                    ((SELECT dog_id FROM Dogs WHERE name = "Charlie"), "2025-06-11 10:00:00", 60, "City Gardens", "completed"),
+                    ((SELECT dog_id FROM Dogs WHERE name = "Daisy"), "2025-06-12 14:30:00", 40, "Riverside Trail", "cancelled"),
+                    ((SELECT dog_id FROM Dogs WHERE name = "Oscar"), "2025-06-13 07:45:00", 35, "Lakeview Park", "open");
             `);
         } catch (err) {
           console.error('Error inserting initial data into WalkRequests table:', err);
