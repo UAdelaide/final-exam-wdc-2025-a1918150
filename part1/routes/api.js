@@ -109,7 +109,7 @@ router.get('/walkrequests/open', async (req, res) => {
         res.json(wr);
     } catch (error) {
         console.error('Error fetching walkrequests which are open:', error);
-        res.status(500).json({ error: 'Failed to fetch dogs' });
+        res.status(500).json({ error: 'Failed to fetch walkrequests which are open' });
     }
 });
 
@@ -123,7 +123,7 @@ router.get('/walkers/summary', async (req, res) => {
         res.json(ws);
     } catch (error) {
         console.error('Error fetching summary of each walker with their average rating and number of completed walks:', error);
-        res.status(500).json({ error: 'Failed to fetch dogs' });
+        res.status(500).json({ error: 'Failed to fetch summary of each walker with their average rating and number of completed walks' });
     }
 });
 
