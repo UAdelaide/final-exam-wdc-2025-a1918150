@@ -87,9 +87,9 @@ let db;
 })();
 
 // Route to return books as JSON
-router.get('/', async (req, res) => {
+router.get('/dogs', async (req, res) => {
     try {
-        const
+        const 
     } catch (error) {
 
     }
