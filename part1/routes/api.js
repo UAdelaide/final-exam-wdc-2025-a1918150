@@ -114,7 +114,7 @@ router.get('/walkrequests/open', async (req, res) => {
     }
 });
 
-// Route to return summary of  as JSON
+// Route to return summary of walkers as JSON
 router.get('/walkers/summary', async (req, res) => {
     try {
         const [ws] = await db.execute(`SELECT u.username AS walker_username, COUNT(r.rating) AS total_ratings, FORMAT(AVG(r.rating), 1) + 0 AS average_rating, COUNT(w.request_id) AS completed_walks
