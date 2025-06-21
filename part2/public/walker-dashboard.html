@@ -76,7 +76,15 @@
 
         onMounted(() => {
           loadWalkRequests();
-          async 
+          async () => {
+            try {
+              const res = await fetch('/api/users/me');
+              if (!res.ok) throw new Error('Failed to load user data');
+              user.value = await res.json();
+            } catch (err) {
+              error.value = err.message;
+            }
+          }();
         });
 
         return {
