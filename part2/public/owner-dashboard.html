@@ -97,6 +97,7 @@
             window.location.href = '/'; // Redirect to home page after logout
           } catch (err) {
             error.value = err.message;
+            alert('Logout failed');
           }
 
         }
