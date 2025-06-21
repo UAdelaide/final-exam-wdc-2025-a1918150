@@ -32,7 +32,23 @@
 
 
     <h2 class="mb-3">Meet our Dogs</h2>
-    <table
+    <table class="table table-striped" v-if="dogs.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Size</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in dogs" :key="dog.id">
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.breed }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.age }} years</td>
+        </tr>
+      </tbody>
 
 
 
