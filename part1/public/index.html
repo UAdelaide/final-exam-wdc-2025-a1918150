@@ -44,10 +44,6 @@
             data() {
                 return {
                     dogImage: ''
-                },
-                mounted() {
-                    this.fetchDogImage();
-                }
                 };
             },
             methods: {
@@ -56,8 +52,12 @@
                         .then(response => response.json())
                         .then(data => {
                             this.dogImage = data.message;
-                        });
+                        })
                 }
+            },
+            mounted() {
+                this.fetchDogImage();
+            }
         }).mount('#app');
     </script>
 </body>
