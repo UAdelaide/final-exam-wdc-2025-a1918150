@@ -50,9 +50,10 @@
         const error = ref('');
         const user = ref(null); // User data will be stored here
 
+        // Method to handle logout
         async function logout() {
           try {
-            const res = await fetch('/api/users/logout', {
+            const res = await fetch('/api/users/logout', { // Endpoint for logout
               method: 'POST',
               credentials: 'include' // Include cookies for session management
               });
