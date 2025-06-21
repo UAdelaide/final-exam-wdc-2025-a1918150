@@ -78,7 +78,8 @@
             if (!res.ok) throw new Error('Failed to load dogs');
             const dogList = await res.json(); // Parse the response as JSON
 
-            const dogImage = await Promise.all
+            const dogImage = await Promise.all(dogList.map(async (dog) => {
+              const Image
 
 
         async login() {
