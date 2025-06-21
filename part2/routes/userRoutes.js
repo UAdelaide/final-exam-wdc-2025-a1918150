@@ -72,4 +72,23 @@ router.post('/logout', async (req, res) => {
   });
 });
 
+// GET all dogs owned by the logged-in user
+router.get('/dogs', async (req, res) => {
+  if (!req.session.user) {
+    return res.status(401).json({ error: 'Not logged in' });
+  }
+
+  const ownerId = req.session.user.user_id;
+
+  try {
+    const [rows] = await db.query(`
+      SELECT dog_id, name FROM Dogs WHERE owner_id = ?
+    `, [ownerId]);
+
+    res.json(rows); // e.g., [{ dog_id: 1, name: 'Rex' }, ...]
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
+
 module.exports = router;
