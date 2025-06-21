@@ -45,7 +45,11 @@
         const error = ref('');
         const user = ref(null); // User data will be stored here
 
-        async function 
+        async function logout() {
+          try {
+            const res = await fetch('/api/users/logout',
+              { method: 'POST' })
+              ;
 
         async function loadWalkRequests() {
           try {
