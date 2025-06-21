@@ -51,7 +51,14 @@
           <td>{{ dog.dog_name }}</td>
           <td>{{ dog.dog_size }}</td>
           <td>{{ dog.owner_id }}</td>
-          <td><img v-if="dog.photo" :src="dog.photo" alt="Dog photo" width="150" class="rounded shadow-sm"></td>
+          <td>
+            <img
+              :src="dog.photo ? dog.photo : 'https://via.placeholder.com/150?text=No+Image'"
+              alt="Dog photo"
+              width="150"
+              class="rounded shadow-sm"
+            >
+          </td>
         </tr>
       </tbody>
     </table>
