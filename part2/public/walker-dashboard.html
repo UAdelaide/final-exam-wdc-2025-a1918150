@@ -60,7 +60,7 @@
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: user.value.user_id }) // JSON body with walker ID changed to use
+              body: JSON.stringify({ walker_id: user.value.user_id }) // JSON body with walker ID changed to user.value.user_id
             });
             const result = await res.json();
 
@@ -73,7 +73,7 @@
             message.value = '';
           }
         }
-
+        // Fetch user data from session on component mount
         onMounted(async () => {
             try {
               const res = await fetch('/api/users/me');
