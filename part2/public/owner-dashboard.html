@@ -115,9 +115,19 @@
           }
         }
 
-        onMounted(() => {
-          loadWalks();
-        });
+        onMounted(async () => {
+            try {
+              const res = await fetch('/api/users/me');
+              if (!res.ok) throw new Error('Failed to load user data using session');
+              user.value = await res.json();
+
+              await loadWalks();
+
+            } catch (err) {
+              error.value = err.message;
+              window.location.href = '/'
+            }
+          });
 
         return {
           form,
