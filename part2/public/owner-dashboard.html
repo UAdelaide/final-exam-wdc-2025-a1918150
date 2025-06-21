@@ -153,6 +153,13 @@
               if (!res.ok) throw new Error('Failed to load user data using session');
               user.value = await res.json();
 
+              // Fetch the user's dogs
+              const dogRes = await fetch('/api/dogs', {
+                credentials: 'include'
+              });
+              if (!dogRes.ok) throw new Error('Failed to load dog list');
+              dogs.value = await dogRes.json();
+
               await loadWalks();
 
             } catch (err) {
