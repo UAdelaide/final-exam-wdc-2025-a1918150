@@ -84,6 +84,8 @@
 
             } catch (err) {
               error.value = err.message;
+              alert('You must be logged in to access this page.');
+
               window.location.href = '/'
             }
           });
