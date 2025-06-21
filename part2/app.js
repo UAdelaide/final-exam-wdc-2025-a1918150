@@ -12,7 +12,7 @@ app.use(express.json());
 //for the session management
 app.use(
     session({
-        secret: 'examsecretkey',// Use a strong secret key in production
+        secret: 'examsecretkey',// Uses a secret key for session signing
         resave: false,
         saveUninitialized: false,
         cookie: { secure: false }
