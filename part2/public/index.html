@@ -33,7 +33,8 @@
     <!-- Table to display all registered dogs -->
     <h2 class="mb-3">All Registerd Dogs</h2>
     <table class="table table-striped align-middle" v-if="dogs.length > 0">
-      <thead class="table-light"> 
+      <!-- Table header -->
+      <thead class="table-light">
         <tr>
           <th>Dog ID</th>
           <th>Name</th>
@@ -42,6 +43,7 @@
           <th>Photo</th>
         </tr>
       </thead>
+      
       <tbody>
         <tr v-for="dog in dogs" :key="dog.dog_id">
           <td>{{ dog.dog_id }}</td>
