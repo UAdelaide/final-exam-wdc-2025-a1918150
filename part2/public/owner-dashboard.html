@@ -125,6 +125,7 @@
 
             } catch (err) {
               error.value = err.message;
+              alert('You must be logged in to access the owner dashboard.');
               window.location.href = '/'
             }
           });
