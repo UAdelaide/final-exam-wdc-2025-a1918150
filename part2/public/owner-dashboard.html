@@ -154,7 +154,7 @@
               user.value = await res.json();
 
               // Fetch the user's dogs
-              const dogRes = await fetch('/api/dogs', {
+              const dogRes = await fetch('/api/users/dogs', {
                 credentials: 'include'
               });
               if (!dogRes.ok) throw new Error('Failed to load dog list');
