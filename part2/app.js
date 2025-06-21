@@ -10,9 +10,9 @@ app.use(express.json());
 
 app.use(
     session({
-        secret: process.env.SESSION_SECRET || 'supersecretkey',
+        secret: process.env.SESSION_SECRET || 'examsecretkey',
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         cookie: { secure: false }
     }
 )
