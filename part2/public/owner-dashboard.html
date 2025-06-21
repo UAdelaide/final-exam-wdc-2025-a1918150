@@ -117,7 +117,8 @@
             message.value = '';
           }
         }
-
+        // Fetch user data from session on component mount
+        // and load existing walk requests
         onMounted(async () => {
             try {
               const res = await fetch('/api/users/me');
