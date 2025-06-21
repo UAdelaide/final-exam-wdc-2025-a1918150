@@ -162,6 +162,7 @@
 
               await loadWalks();
             } catch (err) {
+
               error.value = err.message;
               alert('You must be logged in to access this page.');
               window.location.href = '/'
@@ -175,7 +176,8 @@
           message,
           error,
           logout, // Method to handle logout
-          submitWalkRequest
+          submitWalkRequest,
+          dogs 
         };
       }
     }).mount('#app');
