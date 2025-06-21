@@ -88,9 +88,10 @@
         const message = ref('');
         const error = ref('');
 
+        // Function to handle user logout
         async function logout(params) {
           try {
-            const res = await fetch('/api/users/logout', {
+            const res = await fetch('/api/users/logout', { // API endpoint for logout
               method: 'POST',
               credentials: 'include' // Include cookies for session management
             });
