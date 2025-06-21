@@ -51,7 +51,6 @@
             if (!res.ok) throw new Error('Login failed');
 
             const data = await res.json();
-            this.message = `Welcome back, ${data.user.name}!`;
             // Redirect to appropriate dashboard based on user type
             window.location.href = data.user.role === 'owner' ? 'owner-dashboard.html' : 'walker-dashboard.html';
           } catch (err) {
