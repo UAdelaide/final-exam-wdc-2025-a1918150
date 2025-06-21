@@ -71,6 +71,10 @@
       },
       //method to handle login
       methods: {
+        mounted() {
+          this.loadDogs();
+        },
+
 
         async loadDogs() {
           try {
