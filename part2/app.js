@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const session = require('express-session');
+const session = require('express-session');// Importing the express-session middleware
 require('dotenv').config();
 
 const app = express();
