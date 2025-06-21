@@ -86,6 +86,12 @@
                 photo: imageData.message // Assign random dog image URL
               };
             }));
+            this.dogs = dogImage; // Store the dog data in the dogs array
+          } catch (err) {
+            console.error(err);
+            alert('Error loading dogs: ' + err.message);
+          }
+        },
 
 
         async login() {
