@@ -119,6 +119,7 @@
         }
         // Fetch user data from session on component mount
         // and load existing walk requests
+        // This ensures the user is logged in before accessing the dashboard
         onMounted(async () => {
             try {
               const res = await fetch('/api/users/me');
@@ -135,7 +136,7 @@
           });
 
         return {
-          user,
+          user,// User data fetched from session
           form,
           walks,
           message,
