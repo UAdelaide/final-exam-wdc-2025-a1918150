@@ -49,8 +49,10 @@
           try {
             const res = await fetch('/api/users/logout', {
               method: 'POST',
-            credentials: 'include' // Include cookies for session management
-            });
+              credentials: 'include' // Include cookies for session management
+              });
+            if (!res.ok) throw new Error('Logout failed');
+            
 
             );
 
