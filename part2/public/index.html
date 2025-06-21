@@ -53,7 +53,7 @@
             const data = await res.json();
             this.message = `Welcome back, ${data.name}!`;
             // Redirect to appropriate dashboard based on user type
-            window.location.href = data.is_owner ? 'owner-dashboard.html' : 'walker-dashboard.html';
+            window.location.href = data.role=== ? 'owner-dashboard.html' : 'walker-dashboard.html';
           } catch (err) {
             alert(err.message);
           }
