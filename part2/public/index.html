@@ -16,21 +16,12 @@
     <form @submit.prevent="submitWalkRequest" class="mb-4">
       <div class="mb-3">
         <label class="form-label">Login</label>
-        <input v-model="form.username" type="" class="form-control" required>
+        <input v-model="form.username" type="text" class="form-control" placeholder="Enter your username" required>
       </div>
       <div class="mb-3">
-        <label class="form-label">Requested Date & Time</label>
-        <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
+        <label class="form-label">Password</label>
+        <input v-model="form.password" type="password" class="form-control" placeholder="Enter your password" required>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Duration (minutes)</label>
-        <input v-model="form.duration_minutes" type="number" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Location</label>
-        <input v-model="form.location" type="text" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-success">Create Walk Request</button>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
