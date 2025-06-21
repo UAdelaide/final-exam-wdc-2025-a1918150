@@ -77,7 +77,7 @@ router.get('/dogs', async (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-
+  //  the user ID is stored in the session
   const ownerId = req.session.user.user_id;
 
   try {
