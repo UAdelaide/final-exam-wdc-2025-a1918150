@@ -39,7 +39,26 @@
           password: '',
         };
       }
-      
+      methods: {
+        async login() {
+          try {
+            const res = await fetch('/api/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username: this.username, password: this.password })
+            });
+
+            if (!res.ok) throw new Error('Login failed');
+
+            const data = await res.json();
+            this.message = `Welcome back, ${data.name}!`;
+            // Redirect to appropriate dashboard based on user type
+            window.location.href = data.is_owner ? 'owner-dashboard.html' : 'walker-dashboard.html';
+          } catch (err) {
+            alert(err.message);
+          }
+        }
+      }
     }).mount('#app');
   </script>
 
