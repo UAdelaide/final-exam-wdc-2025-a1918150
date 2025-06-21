@@ -52,7 +52,9 @@
               credentials: 'include' // Include cookies for session management
               });
             if (!res.ok) throw new Error('Logout failed');
-            
+            window.location.href = '/'; // Redirect to home page after logout
+          } catch (err) {
+            alert('Logout failed: ' + err.message);
 
             );
 
