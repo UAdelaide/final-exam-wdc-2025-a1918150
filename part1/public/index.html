@@ -54,7 +54,9 @@
     <div id="app" class="container">
         <h1>HOLISTIC DOG OF THE DAY</h1>
         <img :src="dogImage" width="500" height="auto" />
-        <div class="dog-info" aria-hidden="">Name : Fido <br/> Breed : Who knows!!! <br/> Likes : Everything</div>
+        <div class="dog-info" aria-hidden="true">
+            Name : Fido <br/>
+            Breed : Who knows!!! <br/> Likes : Everything</div>
         <button @click="fetchDogImage" type="button">Get New Dog</button>
     </div>
     <script>
