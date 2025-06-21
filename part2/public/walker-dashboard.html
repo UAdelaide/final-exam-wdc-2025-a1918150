@@ -78,13 +78,13 @@
             try {
               const res = await fetch('/api/users/me');
               if (!res.ok) throw new Error('Failed to load user data using session');
-              user.value = await res.json(); 
+              user.value = await res.json(); // Store user data in the user ref
 
               await loadWalkRequests();
 
             } catch (err) {
               error.value = err.message;
-              alert('You must be logged in to access this page.');
+              alert('You must be logged in to access this page.'); // Alert the user if they are not logged in
               window.location.href = '/'
             }
           });
