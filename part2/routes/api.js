@@ -5,9 +5,8 @@ const db = require('../models/db');
 // Route to return Dogs as JSON
 router.get('/dogs', async (req, res) => {
     try {
-        const [dogs] = await db.execute(`SELECT d.name AS dog_name, d.size, u.username AS owner_username
-                                            FROM Dogs AS d
-                                            JOIN Users AS u ON d.owner_id = u.user_id`);
+        const [dogs] = await db.execute(`SELECT d.dog_id, d.name, d.size, d.owner_id
+                                            FROM Dogs AS d`);
         res.json(dogs);
     } catch (error) {
         console.error('Error fetching dogs:', error);
