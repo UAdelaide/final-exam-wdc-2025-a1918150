@@ -69,13 +69,13 @@
           dogs: [] // Array to hold dog data
         };
       },
+
+      mounted() {
+        this.loadDogs(); // Load dog data when the component is mounted
+      },
+
       //method to handle login
       methods: {
-        mounted() {
-          this.loadDogs();
-        },
-
-
         async loadDogs() {
           try {
             const res = await fetch('/api/dogs'); // Fetch dog data from the API
