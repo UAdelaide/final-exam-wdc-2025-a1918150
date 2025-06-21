@@ -50,7 +50,7 @@
         const error = ref('');
         const user = ref(null); // User data will be stored here
 
-
+        // Method to fetch current user data from session
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me'); // Fetch user data from session
