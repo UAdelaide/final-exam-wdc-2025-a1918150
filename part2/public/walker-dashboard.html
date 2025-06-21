@@ -84,9 +84,10 @@
 
             } catch (err) {
               error.value = err.message;
+              window.location.href = '/'
             }
           }();
-        });
+        );
 
         return {
           walks,
