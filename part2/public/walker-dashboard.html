@@ -80,7 +80,7 @@
               if (!res.ok) throw new Error('Failed to load user data using session');
               user.value = await res.json();
 
-              aw loadWalkRequests();
+              await loadWalkRequests();
 
             } catch (err) {
               error.value = err.message;
