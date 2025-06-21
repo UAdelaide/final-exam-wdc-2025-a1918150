@@ -52,8 +52,7 @@
                         .then(response => response.json())
                         .then(data => {
                             this.dogImage = data.message;
-                        })
-                        
+                        });
                 }
             },
             mounted() {
