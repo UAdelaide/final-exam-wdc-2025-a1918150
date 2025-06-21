@@ -76,6 +76,8 @@
           try {
             const res = await fetch('/api/dogs'); // Fetch dog data from the API
             if (!res.ok) throw new Error('Failed to load dogs');
+            const dogList = await res.json(); // Parse the response as JSON
+
             const 
 
 
