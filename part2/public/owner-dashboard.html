@@ -153,7 +153,7 @@
               if (!res.ok) throw new Error('Failed to load user data using session');
               user.value = await res.json();
 
-              // Fetch the user's dogs based on the 
+              // Fetch the user's dogs based on the user_id on session
               const dogRes = await fetch('/api/users/dogs', {
                 credentials: 'include'
               });
