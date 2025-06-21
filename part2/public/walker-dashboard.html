@@ -50,6 +50,19 @@
         const error = ref('');
         const user = ref(null); // User data will be stored here
 
+
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/me'); // Fetch user data from session
+            if (!res.ok) throw new Error('Failed to load user data');
+            user.value = await res.json(); // Store user data in the user ref
+          } catch (err) {
+            error.value = err.message;
+            alert('You must be logged in to access this page.'); // Alert the user if they are not logged in
+            window.location.href = '/'; // Redirect to home page
+          }
+        }
+
         // Method to handle logout
         async function logout() {
           try {
