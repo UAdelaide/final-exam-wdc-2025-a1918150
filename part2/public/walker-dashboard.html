@@ -74,8 +74,7 @@
           }
         }
 
-        onMounted(() => {
-          loadWalkRequests();
+        onMounted(
           async () => {
             try {
               const res = await fetch('/api/users/me');
