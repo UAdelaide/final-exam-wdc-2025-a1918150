@@ -148,15 +148,15 @@
         // and load existing walk requests
         // This ensures the user is logged in before accessing the dashboard
         onMounted(async () => {
-  try {
-    const res = await fetch('/api/users/me');
-    if (!res.ok) throw new Error('Failed to load user data using session');
-    user.value = await res.json();
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error('Failed to load user data using session');
+            user.value = await res.json();
 
-    // Fetch the user's dogs
-    const dogRes = await fetch('/api/dogs', {
-      credentials: 'include'
-    });
+            // Fetch the user's dogs
+            const dogRes = await fetch('/api/dogs', {
+              credentials: 'include'
+            });
     if (!dogRes.ok) throw new Error('Failed to load dog list');
     dogs.value = await dogRes.json();
 
